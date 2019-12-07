@@ -20,6 +20,7 @@ MODULES=global        \
 		window        \
 		mouse         \
 		voxel         \
+		fps_panel     \
 		main
 OBJECTS=$(foreach MODULE, ${MODULES}, build/${MODULE}.o)
 CFLAGS=-Wall -I/opt/vc/include `pkg-config --cflags cairo`

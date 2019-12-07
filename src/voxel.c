@@ -26,10 +26,14 @@ Voxel* voxel_init(Voxel* v) {
     panel_manager_init(&voxel->panelManager, &voxel->renderer);
     picker_panel_init(&voxel->pickerPanel, &voxel->panelManager, &voxel->picker);
 
+    fps_panel_init(&voxel->fpsPanel, &voxel->panelManager);
+    fps_panel_set_position(&voxel->fpsPanel, 16, voxel->window.height - 30);
+
     return voxel;
 }
 
 void voxel_destroy(Voxel* voxel) {
+    fps_panel_destroy(&voxel->fpsPanel);
     picker_panel_destroy(&voxel->pickerPanel);
     panel_manager_destroy(&voxel->panelManager);
     picker_destroy(&voxel->picker);
@@ -165,26 +169,38 @@ char voxel_process_input(Voxel* voxel) {
     return 1; 
 }
 
-void voxel_run(Voxel* voxel) {
-    World world;
-    world_init(&world, "cubes");
+void voxel_draw(Voxel* voxel) {
+    world_draw(&voxel->world, &voxel->camera, &voxel->renderer);
 
-    picker_set_world(&voxel->picker, &world);
+    picker_draw(&voxel->picker, &voxel->renderer);
+
+    panel_manager_draw(&voxel->panelManager);
+
+    cursor_draw(&voxel->cursor, &voxel->renderer);
+
+    window_draw(&voxel->window);
+}
+
+void voxel_run(Voxel* voxel) {
+    world_init(&voxel->world, "cubes");
+
+    picker_set_world(&voxel->picker, &voxel->world);
 
     while (1) {
         if (!voxel_process_input(voxel))
             break;
 
-        world_draw(&world, &voxel->camera, &voxel->renderer);
+        voxel_draw(voxel);
+    
+        struct timeval oldFrameTime = voxel->frameTime;
+        gettimeofday(&voxel->frameTime, NULL);
 
-        picker_draw(&voxel->picker, &voxel->renderer);
+        struct timeval elapsed;
+        timersub(&voxel->frameTime, &oldFrameTime, &elapsed);
+        long millisElapsed = (elapsed.tv_sec * 1000000 + elapsed.tv_usec) / 1000;
 
-        panel_manager_draw(&voxel->panelManager);
-
-        cursor_draw(&voxel->cursor, &voxel->renderer);
-
-        window_draw(&voxel->window);
+        fps_panel_set_fps(&voxel->fpsPanel, 1000.0 / millisElapsed);
     }
 
-    world_destroy(&world);
+    world_destroy(&voxel->world);
 }
