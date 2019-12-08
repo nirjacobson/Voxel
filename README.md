@@ -23,7 +23,7 @@ make
 ## Controls
 Use **W**, **A**, **S**, **D**, **↑**, **↓**, **←**, **→** to navigate.
 
-**TAB** toggles the adjacency mode of the picker. The picker can either operate on blocks or the positions adjacent to them.  
+**TAB** toggles the adjacency mode of the picker. The picker can operate on blocks or the positions adjacent to them.  
 **ESC** exits the program.
 
 The picker tools have the following hotkeys:
@@ -35,6 +35,6 @@ The picker tools have the following hotkeys:
 - **C** - Move (cut selection)
 
 ## Tools
-The *pencil*, *eraser* and *select* tools support click-and-drag.  
-When placing a selection with the *stamp** or *move* tools, right-click will rotate the target.  
-With the *select* tool, **SHIFT+Click** will add to an existing selection.
+The **pencil**, **eraser** and **select** tools support click-and-drag.  
+When placing a selection with the **stamp** or **move** tools, right-click will rotate the target.  
+With the **select** tool, **SHIFT+Click** adds to an existing selection.
