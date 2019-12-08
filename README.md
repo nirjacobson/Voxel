@@ -1,14 +1,30 @@
 # Voxel
 Voxel is an engine demo that allows you to paint with volumetric pixels, or voxels. It’s similar to the original MS Paint program in a 3D, Minecraft-esque environment. It has an infinite draw area that is saved to a file as it is explored.
 
-![Voxel](https://nirjacobson.com/wp-content/uploads/2019/12/voxel.png)
+[Voxel](https://nirjacobson.com/wp-content/uploads/2019/12/voxel.png)
 
 There is a branch for the Raspberry Pi 3 and the Raspberry Pi 4.
 
-## Controls
-Use W, A, S, D, ↑, ↓, ←, → to navigate.
+## Dependencies
 
-Use **TAB** to toggle the adjancency mode of the picker. The picker can either operate on blocks or the positions adjacent to them. **ESC** exits the program.
+Voxel depends on the [cairo](https://www.cairographics.org/) graphics library.
+
+`sudo apt install libcairo2-dev`
+
+## Installation
+
+```
+git clone https://github.com/nirjacobson/voxel.git
+cd voxel/
+make
+./voxel
+```
+
+## Controls
+Use **W**, **A**, **S**, **D**, **↑**, **↓**, **←**, **→** to navigate.
+
+**TAB** toggles the adjacency mode of the picker. The picker can either operate on blocks or the positions adjacent to them.  
+**ESC** exits the program.
 
 The picker tools have the following hotkeys:
 - **1** - Pencil
@@ -19,5 +35,6 @@ The picker tools have the following hotkeys:
 - **C** - Move (cut selection)
 
 ## Tools
-The **pencil**, **eraser** and **select** tools support click-and-drag. When placing a selection with the **stamp** or **move** tools, right-click will rotate the target.
-
+The *pencil*, *eraser* and *select* tools support click-and-drag.  
+When placing a selection with the *stamp** or *move* tools, right-click will rotate the target.  
+With the *select* tool, **SHIFT+Click** will add to an existing selection.
