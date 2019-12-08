@@ -1,7 +1,7 @@
 # Voxel
 Voxel is an engine demo that allows you to paint with volumetric pixels, or voxels. It’s similar to the original MS Paint program in a 3D, Minecraft-esque environment. It has an infinite draw area that is saved to a file as it is explored.
 
-[Voxel](https://nirjacobson.com/wp-content/uploads/2019/12/voxel.png)
+![Voxel](https://nirjacobson.com/wp-content/uploads/2019/12/voxel.png)
 
 There is a branch for the Raspberry Pi 3 and the Raspberry Pi 4.
 
