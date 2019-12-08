@@ -33,8 +33,7 @@ The picker tools have the following hotkeys:
 - **Z** - Region select
 - **X** - Stamp (copy selection)
 - **C** - Move (cut selection)
-
-## Tools
+  
 The **pencil**, **eraser** and **select** tools support click-and-drag.  
 When placing a selection with the **stamp** or **move** tools, right-click will rotate the target.  
 With the **select** tool, **SHIFT+Click** adds to an existing selection.
