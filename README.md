@@ -7,9 +7,12 @@ There is a branch for the Raspberry Pi 3 and the Raspberry Pi 4.
 
 ## Dependencies
 
-Voxel depends on the [cairo](https://www.cairographics.org/) graphics library.
+Voxel depends on the [cairo](https://www.cairographics.org/) graphics library. [GLFW](https://www.glfw.org/) is also a dependency on the Raspberry Pi 4.
 
-`sudo apt install libcairo2-dev`
+```
+sudo apt install libcairo2-dev
+sudo apt install libglfw3-dev    # (Raspberry Pi 4 only)
+```
 
 ## Installation
 
