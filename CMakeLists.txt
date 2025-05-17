@@ -258,3 +258,17 @@ elseif (APPLE)
     )
     target_link_libraries(Voxel LINK_PUBLIC "-framework OpenGL")
 endif()
+
+include(GNUInstallDirs)
+install(TARGETS Voxel
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+if (LINUX)
+  install(FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/unix_install/voxel.png DESTINATION /usr/share/icons)
+  install(FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/unix_install/Voxel.desktop DESTINATION /usr/share/applications)
+endif()

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Icon=voxel
+Exec=Voxel
+StartupWMClass=Voxel
+Terminal=false
+Categories=Graphics;3DGraphics;
+
+Name=Voxel
+GenericName=Volumetric pixel painter
+Comment=Volumetric pixel painter
