@@ -9,7 +9,6 @@
 #include "box.h"
 
 typedef struct {
-    Vulkan* vulkan;
     float fov;
     float aspect;
     float _near;
@@ -26,7 +25,7 @@ typedef struct {
     float mat_proj_inv[16];
 } Camera;
 
-Camera* camera_init(Camera* c, Vulkan* vulkan);
+Camera* camera_init(Camera* c);
 
 void camera_rotate(Camera* camera, float* axis, float radians);
 void camera_move(Camera* camera, float* direction, float amount);

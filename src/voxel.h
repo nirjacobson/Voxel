@@ -12,7 +12,6 @@
 #include <gio/gio.h>
 
 #include "global.h"
-#include "vulkan_util.h"
 #include "application.h"
 #include "window.h"
 #include "renderer.h"
@@ -28,8 +27,6 @@
 typedef struct Voxel {
     Application application;
     Window window;
-
-    Vulkan* vulkan;
 
     Renderer renderer;
 

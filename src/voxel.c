@@ -132,9 +132,6 @@ char voxel_process_input(Voxel* voxel) {
             voxel->picker.mode = voxel->picker.mode == PICKER_ONTO ? PICKER_ADJACENT : PICKER_ONTO;
             float nx = (2.0 * ((float)mouseX[0])/voxel->window.width) - 1;
             float ny = (2.0 * ((float)(voxel->window.height - mouseY[0]))/voxel->window.height) - 1;
-            if (voxel->vulkan) {
-                ny = -ny;
-            }
             picker_update(&voxel->picker, &voxel->camera, nx, ny);
         }
     } else {
@@ -188,9 +185,6 @@ char voxel_process_input(Voxel* voxel) {
             if (!panel) {
                 float nx = (2.0 * ((float)mouseX[0])/voxel->window.width) - 1;
                 float ny = (2.0 * ((float)(voxel->window.height - mouseY[0]))/voxel->window.height) - 1;
-                if (voxel->vulkan) {
-                    ny = -ny;
-                }
                 picker_update(&voxel->picker, &voxel->camera, nx, ny);
             }
         }
@@ -246,15 +240,10 @@ void texture_panel(void* panelPtr, void* userData) {
 void voxel_draw(Voxel* voxel) {
     world_update(&voxel->world, &voxel->camera);
 
-    if (!voxel->vulkan) {
-        renderer_clear(&voxel->renderer);
-        renderer_render_world(&voxel->renderer, &voxel->world, &voxel->camera);
-        renderer_render_picker(&voxel->renderer, &voxel->picker);
-        renderer_render_panels(&voxel->renderer, &voxel->panelManager.panels);
-    } else {
-        linked_list_foreach(&voxel->panelManager.panels, texture_panel, voxel);
-        renderer_vulkan_render(&voxel->renderer, &voxel->world, &voxel->camera, &voxel->picker, &voxel->panelManager.panels);       
-    }
+    renderer_clear(&voxel->renderer);
+    renderer_render_world(&voxel->renderer, &voxel->world, &voxel->camera);
+    renderer_render_picker(&voxel->renderer, &voxel->picker);
+    renderer_render_panels(&voxel->renderer, &voxel->panelManager.panels);
     struct timeval oldFrameTime = voxel->frameTime;
     gettimeofday(&voxel->frameTime, NULL);
 
@@ -268,72 +257,19 @@ void voxel_draw(Voxel* voxel) {
     }
 }
 
-void voxel_setup_vulkan(Voxel* voxel) {
-    voxel->vulkan = NULL;
-
-    if (!glfwVulkanSupported() || getenv("FORCE_OPENGL")) {
-        printf("Using OpenGL.\n");
-        return;
-    }
-
-    Vulkan* vulkan = NEW(Vulkan, 1);
-    if (!vulkan_create_instance("Voxel", &vulkan->instance)) {
-        printf("failed to create Vulkan instance.\n");
-        printf("Using OpenGL.\n");
-        return;
-    }
-
-    if (glfwCreateWindowSurface(vulkan->instance, voxel->window.glfwWindow, NULL, &vulkan->surface) != VK_SUCCESS) {
-        printf("failed to create window surface.\n");
-        printf("Using OpenGL.\n");
-        return;
-    }
-
-    voxel->window.surface = vulkan->surface;
-
-    vulkan_pick_physical_device(vulkan->instance, voxel->window.surface, &vulkan->physicalDevice);
-
-    vulkan_create_logical_device(vulkan->physicalDevice, voxel->window.surface, &vulkan->device, &voxel->renderer.renderState.vulkan.graphicsQueue, &voxel->renderer.renderState.vulkan.presentQueue);
-    vulkan->commandQueue = voxel->renderer.renderState.vulkan.graphicsQueue;
-
-    vulkan_create_command_pool(vulkan->physicalDevice, vulkan->device, vulkan->surface, &vulkan->commandPool);
-
-    voxel->vulkan = vulkan;
-
-    printf("Using Vulkan.\n");
-}
-
-void voxel_teardown_vulkan(Voxel* voxel) {
-    PFN_vkDestroyCommandPool pfnDestroyCommandPool =
-        (PFN_vkDestroyCommandPool)glfwGetInstanceProcAddress(NULL, "vkDestroyCommandPool");
-    PFN_vkDestroyDevice pfnDestroyDevice =
-        (PFN_vkDestroyDevice)glfwGetInstanceProcAddress(NULL, "vkDestroyDevice");
-    PFN_vkDestroySurfaceKHR pfnDestroySurfaceKHR =
-        (PFN_vkDestroySurfaceKHR)glfwGetInstanceProcAddress(NULL, "vkDestroySurfaceKHR");
-    PFN_vkDestroyInstance pfnDestroyInstance =
-        (PFN_vkDestroyInstance)glfwGetInstanceProcAddress(voxel->vulkan->instance, "vkDestroyInstance");
-
-    pfnDestroyCommandPool(voxel->vulkan->device, voxel->vulkan->commandPool, NULL);
-    pfnDestroyDevice(voxel->vulkan->device, NULL);
-    pfnDestroySurfaceKHR(voxel->vulkan->instance, voxel->window.surface, NULL);
-    pfnDestroyInstance(voxel->vulkan->instance, NULL);
-}
-
 void voxel_setup(Application* application) {
     Voxel* voxel = (Voxel*)application->owner;
 
     g_resources_register(resources_get_resource());
 
-    voxel_setup_vulkan(voxel);
+    renderer_init(&voxel->renderer, &voxel->window);
 
-    renderer_init(&voxel->renderer, &voxel->window, voxel->vulkan);
-
-    camera_init(&voxel->camera, voxel->vulkan);
+    camera_init(&voxel->camera);
     camera_move(&voxel->camera, Y, 2);
 
     bool new = false;
 
-    world_init(&voxel->world, voxel->vulkan, "cubes", &new);
+    world_init(&voxel->world, "cubes", &new);
 
     picker_init(&voxel->picker, &voxel->world, &voxel->undoStack);
 
@@ -400,9 +336,7 @@ void voxel_main(Application* application) {
 
         voxel_draw(voxel);
 
-        if (!voxel->vulkan) {
-            glfwSwapBuffers(application->window->glfwWindow);
-        }
+        glfwSwapBuffers(application->window->glfwWindow);
     }
 }
 
@@ -430,22 +364,11 @@ void voxel_resize(Application* application) {
 
     camera_set_aspect(&voxel->camera, (float)application->window->width / application->window->height);
 
-    if (!voxel->vulkan) {
-        renderer_resize(&voxel->renderer, application->window->width, application->window->height, &voxel->camera);
-    } else {
-        renderer_vulkan_resize(&voxel->renderer);
-    }
+    renderer_resize(&voxel->renderer, application->window->width, application->window->height, &voxel->camera);
 }
 
 void voxel_teardown(Application* application) {
     Voxel* voxel = (Voxel*)application->owner;
-
-    if (voxel->vulkan) {
-        PFN_vkDeviceWaitIdle pfnDeviceWaitIdle =
-            (PFN_vkDeviceWaitIdle)glfwGetInstanceProcAddress(NULL, "vkDeviceWaitIdle");
-
-        pfnDeviceWaitIdle(voxel->vulkan->device);
-    }
 
     undo_stack_destroy(&voxel->undoStack);
     world_destroy(&voxel->world);
@@ -455,10 +378,6 @@ void voxel_teardown(Application* application) {
     panel_manager_destroy(&voxel->panelManager);
     picker_destroy(&voxel->picker);
     renderer_destroy(&voxel->renderer);
-
-    if (voxel->vulkan) {
-        voxel_teardown_vulkan(voxel);
-    }
 }
 
 void voxel_run(Voxel* voxel) {

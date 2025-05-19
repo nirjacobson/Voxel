@@ -35,48 +35,6 @@ elseif (APPLE)
     include_directories("/opt/homebrew/include/")
 endif()
 
-find_program(GLSLC NAMES glslc REQUIRED)
-
-set(SPIRV_SOURCES
-    src/shaders/glsl/450/3D.vert.glsl
-    src/shaders/glsl/450/3D.frag.glsl
-    src/shaders/glsl/450/2D.vert.glsl
-    src/shaders/glsl/450/2D.frag.glsl
-)
-
-make_directory(${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/spir-v)
-set(SPIRV_BIN)
-
-foreach(SPIRV_SOURCE IN LISTS SPIRV_SOURCES)
-    cmake_path(GET SPIRV_SOURCE FILENAME SPIRV_NAME)
-    string(REGEX REPLACE "\\.[^.]*$" "" SPIRV_NAME ${SPIRV_NAME})
-    string(CONCAT SPIRV_NAME  ${SPIRV_NAME} ".spv")
-    set(SPIRV_OUT src/shaders/spir-v/${SPIRV_NAME})
-    string(FIND ${SPIRV_NAME} "vert" SPIRV_NAME_VERT)
-    if(SPIRV_NAME_VERT GREATER_EQUAL 0)
-        set(SPIRV_STAGE "vert")
-    else()
-        set(SPIRV_STAGE "frag")
-    endif()
-    add_custom_command(
-        OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/${SPIRV_OUT}
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        COMMAND ${GLSLC}
-        ARGS
-            -fshader-stage=${SPIRV_STAGE}
-            -c ${SPIRV_SOURCE}
-            -o ${CMAKE_CURRENT_SOURCE_DIR}/${SPIRV_OUT}
-        VERBATIM
-        MAIN_DEPENDENCY ${SPIRV_SOURCE}
-    )
-    list(APPEND SPIRV_BIN ${CMAKE_CURRENT_SOURCE_DIR}/${SPIRV_OUT})
-endforeach()
-
-add_custom_target(
-    Voxel-SPIRV
-    DEPENDS ${SPIRV_BIN}
-)
-
 find_program(GLIB_COMPILE_RESOURCES NAMES glib-compile-resources REQUIRED)
 set(GRESOURCE_C   src/resources.c)
 set(GRESOURCE_XML resources.xml)
@@ -100,7 +58,6 @@ add_custom_command(
         src/shaders/glsl/300/3D.frag.glsl
         src/shaders/glsl/300/2D.vert.glsl
         src/shaders/glsl/300/2D.frag.glsl
-        ${SPIRV_BIN}
         img/color-dropper-natural.png
         img/color-dropper-selected.png
         img/eraser-natural.png
@@ -141,7 +98,6 @@ set(PROJECT_SOURCES
     src/chunk_dao.c
     src/picker_panel.c
     src/instructions_panel.c
-    src/vulkan_util.h
     src/chunk.h
     src/camera.h
     src/voxel.c
@@ -190,7 +146,6 @@ set(PROJECT_SOURCES
     src/picker.h
     src/ground.c
     src/picker.c
-    src/vulkan_util.c
     src/commands/world_clear_region_command.c
     src/commands/world_cut_chunk_command.c
     src/commands/world_copy_chunk_command.c
@@ -213,7 +168,6 @@ add_executable(Voxel
     ${WIN32_RESOURCES}
 )
 
-add_dependencies(Voxel-Resource Voxel-SPIRV)
 add_dependencies(Voxel Voxel-Resource)
 
 if (WIN32)

@@ -2,6 +2,7 @@
 #define HEAP_H
 
 #include <stdio.h>
+#include <stdbool.h>
 
 #ifndef _WIN32
 #include <unistd.h>

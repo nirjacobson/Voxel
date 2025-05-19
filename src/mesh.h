@@ -4,9 +4,10 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#include <GL/glew.h>
+
 #include "global.h"
 #include "linked_list.h"
-#include "vulkan_util.h"
 
 #define NORTH           0
 #define SOUTH           1
@@ -29,7 +30,6 @@ typedef struct {
 } Quad;
 
 typedef struct {
-    Vulkan* vulkan;
     uint16_t color;
     LinkedList quads;
 
@@ -38,17 +38,10 @@ typedef struct {
             GLuint vbo;
             GLuint ebo;
         } opengl;
-        struct {
-            VkBuffer vbo;
-            VkDeviceMemory vboDeviceMemory;
-            VkBuffer ebo;
-            VkDeviceMemory eboDeviceMemory;
-            bool haveBuffers;
-        } vulkan;
     } renderState;
 } Mesh;
 
-Mesh* mesh_init(Mesh* m, Vulkan* vulkan);
+Mesh* mesh_init(Mesh* m);
 void mesh_destroy(Mesh* mesh);
 
 void mesh_add_quad(Mesh* mesh, Quad* quad);

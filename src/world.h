@@ -18,13 +18,12 @@ typedef struct {
 } WorldChunk;
 
 typedef struct {
-    Vulkan* vulkan;
     ChunkDAO chunkDAO;
     LinkedList chunks;
     Ground ground;
 } World;
 
-World* world_init(World* world, Vulkan* vulkan, const char* name, bool* new);
+World* world_init(World* world, const char* name, bool* new);
 void world_destroy(World* world);
 
 Block* world_get_block(World* world, int* location);

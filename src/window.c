@@ -75,21 +75,6 @@ void window_open(Window* window) {
     }
 #endif
 
-    bool vulkan = glfwVulkanSupported() && !getenv("FORCE_OPENGL");
-
-    if (vulkan) {
-        Vulkan vulk;
-        vulkan = vulkan && vulkan_create_instance("Voxel", &vulk.instance);
-
-        if (vulkan) {
-            PFN_vkDestroyInstance pfnDestroyInstance =
-                (PFN_vkDestroyInstance)glfwGetInstanceProcAddress(vulk.instance, "vkDestroyInstance");
-            pfnDestroyInstance(vulk.instance, NULL);
-
-            glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-        }
-    }
-
     window->glfwWindow = glfwCreateWindow(window->width, window->height, "Voxel", NULL, NULL);
     if (!window->glfwWindow) {
         glfwTerminate();
@@ -103,11 +88,9 @@ void window_open(Window* window) {
     glfwMakeContextCurrent(window->glfwWindow);
     glfwSetFramebufferSizeCallback(window->glfwWindow, resize);
 
-    if (!vulkan) {
-        glewExperimental = GL_TRUE;
-        if (glewInit() != GLEW_OK) {
-            printf("GLEW::Error : failed to initialize GLEW\n");
-        }
+    glewExperimental = GL_TRUE;
+    if (glewInit() != GLEW_OK) {
+        printf("GLEW::Error : failed to initialize GLEW\n");
     }
 
     if (window->application->setup)

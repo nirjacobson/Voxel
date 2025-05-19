@@ -1,9 +1,9 @@
 #include "ground.h"
 
-Ground* ground_init(Ground* g, Vulkan* vulkan, int length) {
+Ground* ground_init(Ground* g, int length) {
     Ground* ground = g ? g : NEW(Ground, 1);
 
-    mesh_init(&ground->mesh, vulkan);
+    mesh_init(&ground->mesh);
 
     Quad* quad = NEW(Quad, 1);
 

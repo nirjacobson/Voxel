@@ -6,7 +6,7 @@ void picker_init(Picker* p, World* world, UndoStack* undoStack) {
     picker->world = world;
     picker->undoStack = undoStack;
 
-    box_init(&picker->box, world->vulkan);
+    box_init(&picker->box);
     box_mesh(&picker->mesh, &picker->box);
 
     picker->selection.model = NULL;
@@ -157,7 +157,7 @@ void picker_act(Picker* picker, char modifier1, char modifier2) {
 
 Box picker_merge_selections(Box* selectionA, Box* selectionB) {
     Box merged;
-    box_init(&merged, selectionA->vulkan);
+    box_init(&merged);
 
     merged.position[0] = MIN(selectionA->position[0], selectionB->position[0]);
     merged.position[1] = MIN(selectionA->position[1], selectionB->position[1]);

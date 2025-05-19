@@ -7,7 +7,6 @@
 #include "global.h"
 #include "linked_list.h"
 #include "window.h"
-#include "vulkan_util.h"
 #include "renderer.h"
 
 const extern int MAX_FRAMES_IN_FLIGHT;
@@ -37,7 +36,6 @@ typedef struct ActionRegion {
 /* Panel */
 
 typedef struct Panel {
-    Vulkan* vulkan;
     Renderer* renderer;
 
     union {
@@ -45,14 +43,6 @@ typedef struct Panel {
             unsigned int vbo;
             unsigned int tex;
         } opengl;
-        struct {
-            VkBuffer vbo;
-            VkDeviceMemory vboDeviceMemory;
-            VkImage texImage;
-            VkDeviceMemory texImageDeviceMemory;
-            VkImageView texImageView;
-            VkDescriptorSet* descriptorSets;
-        } vulkan;
     } renderState;
 
     cairo_surface_t *surface;
