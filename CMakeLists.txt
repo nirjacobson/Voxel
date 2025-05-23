@@ -268,7 +268,7 @@ install(TARGETS Voxel
 
 if (LINUX)
   install(FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/unix_install/voxel.png DESTINATION /usr/share/icons)
+    ${CMAKE_CURRENT_SOURCE_DIR}/unix_install/voxel.svg DESTINATION /usr/share/icons)
   install(FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/unix_install/Voxel.desktop DESTINATION /usr/share/applications)
 endif()
