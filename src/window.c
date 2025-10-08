@@ -75,7 +75,7 @@ void window_open(Window* window) {
     }
 #endif
 
-    bool vulkan = glfwVulkanSupported() && !getenv("FORCE_OPENGL");
+    bool vulkan = glfwVulkanSupported() && getenv("USE_VULKAN");
 
     if (vulkan) {
         Vulkan vulk;
