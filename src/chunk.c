@@ -16,8 +16,9 @@ char meshes_are_equal(void* ptrA, void* ptrB) {
     return meshA->color == meshB->color;
 }
 
-void prepare_mesh(void* ptr, void* rendererPtr) {
+void prepare_mesh(void* ptr, void* userData) {
     Mesh* mesh = (Mesh*)ptr;
+    (void*)userData;
 
     mesh_calc_normals(mesh);
     mesh_buffer(mesh, MESH_FILL);

@@ -9,10 +9,16 @@
 /**
  * @class BPTreeHeader
  * @brief B+ tree header.
+ * @details HeapHeader and BPTreeHeader are read from the same page in the save file.
  */
 typedef struct {
-    unsigned long freeSpacePtr; ///< The byte offset to free space in the save file.
-    unsigned long rootPtr;      ///< The byte offset to the root node of the index.
+    /// @private
+    /// @brief The byte offset to free space in the save file.
+    unsigned long freeSpacePtr;
+
+    /// @private
+    /// @brief The byte offset to the root node of the index.
+    unsigned long rootPtr;
 } BPTreeHeader;
 
 /**
