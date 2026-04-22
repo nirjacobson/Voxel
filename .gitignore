@@ -3,3 +3,4 @@ voxel
 *.vxl
 img/original/
 src/shaders/spir-v
+docs/
