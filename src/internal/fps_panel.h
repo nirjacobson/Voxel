@@ -6,6 +6,12 @@
 
 #include "../fps_panel.h"
 
+/** 
+ * @private
+ * @memberof FPSPanel
+ * @brief Callback used to (re)draw the FPSPanel.
+ * @param [in] fpsPanelPtr The FPS panel being drawn.
+ */
 void fps_panel_draw(void* fpsPanelPtr);
 
 #endif // FPS_PANEL_INTERNAL_H

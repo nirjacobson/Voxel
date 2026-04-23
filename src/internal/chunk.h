@@ -5,7 +5,6 @@
 
 /* Linked list processing callbacks */
 
-
 /** 
  * @private
  * @memberof Chunk

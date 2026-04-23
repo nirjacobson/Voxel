@@ -21,8 +21,8 @@ char coords_over_panel(void* coordsPtr, void* panelPtr) {
 
 /* Panel */
 
-Panel* panel_init(Panel* d, Renderer* renderer, void* owner, void (*drawCallback)(void*), PanelManager* manager, unsigned int width, unsigned int height) {
-    Panel* panel = d ? d : NEW(Panel, 1);
+Panel* panel_init(Panel* p, Renderer* renderer, void* owner, void (*drawCallback)(void*), PanelManager* manager, unsigned int width, unsigned int height) {
+    Panel* panel = p ? p : NEW(Panel, 1);
 
     panel->renderer = renderer;
     panel->vulkan = renderer->vulkan;
