@@ -21,7 +21,7 @@
 /// @}
 
 /// @memberof Picker
-/// @defgroup PickerTools "Picker tools"
+/// @defgroup PickerTools Picker tools
 /// @{
 #define PICKER_CLEAR       3
 #define PICKER_SET         4

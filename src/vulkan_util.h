@@ -14,6 +14,13 @@
 
 #include "matrix.h"
 
+/// @defgroup Vulkan Vulkan
+/// @{
+
+/**
+ * @class Pipeline
+ * @brief Vulkan state for a pipeline.
+ */
 typedef struct {
     VkDescriptorSetLayout descriptorSetLayout;
     VkPipelineLayout layout;
@@ -21,6 +28,10 @@ typedef struct {
     int descriptorSetCount;
 } Pipeline;
 
+/**
+ * @class Vulkan
+ * @brief Global Vulkan state.
+ */
 typedef struct {
     VkInstance instance;
     VkPhysicalDevice physicalDevice;
@@ -30,11 +41,19 @@ typedef struct {
     VkQueue commandQueue;
 } Vulkan;
 
+/**
+ * @class QueueFamilyIndices
+ * @brief Graphics and presentation queue family indices from Vulkan.
+ */
 typedef struct {
     uint32_t graphicsFamily;
     uint32_t presentFamily;
 } QueueFamilyIndices;
 
+/**
+ * @class SwapChainSupportDetails
+ * @brief Swapchain support details from Vulkan.
+ */
 typedef struct {
     VkSurfaceCapabilitiesKHR capabilities;
     VkSurfaceFormatKHR* formats;
@@ -43,6 +62,10 @@ typedef struct {
     int numPresentModes;
 } SwapChainSupportDetails;
 
+/**
+ * @class SwapChain
+ * @brief Vulkan swapchain state.
+ */
 typedef struct {
     VkSwapchainKHR swapChain;
     VkImage* images;
@@ -53,6 +76,10 @@ typedef struct {
     VkExtent2D extent;
 } SwapChain;
 
+/**
+ * @defgroup VulkanUtil Vulkan utility functions
+ * @{
+ */
 bool vulkan_check_validation_layer_support();
 bool vulkan_queue_family_indices_is_complete(QueueFamilyIndices* indices);
 QueueFamilyIndices vulkan_find_queue_families(VkPhysicalDevice device, VkSurfaceKHR surface);
@@ -85,7 +112,7 @@ void vulkan_create_command_buffers(VkDevice device, VkCommandPool commandPool, i
 void vulkan_copy_buffer(VkDevice device, VkQueue queue, VkCommandPool commandPool, VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size);
 void vulkan_transition_image_layout(VkDevice device, VkQueue queue, VkCommandPool commandPool, VkImage image, VkFormat format, VkImageLayout oldLayout, VkImageLayout newLayout);
 void vulkan_copy_buffer_to_image(VkDevice device, VkQueue queue, VkCommandPool commandPool, VkBuffer buffer, VkImage image, uint32_t width, uint32_t height);
-
 void vulkan_clip_correction_matrix(float* data);
-
+/// @}
+/// @}
 #endif // VULKAN_UTIL_H

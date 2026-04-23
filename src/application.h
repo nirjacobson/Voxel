@@ -17,7 +17,7 @@ typedef void (*ApplicationFn)(struct Application*);
  */
 typedef struct Application {
     /// @private
-    /// @brief Application Window.
+    /// @brief Voxel Window.
     struct Window* window;
 
     /// @private

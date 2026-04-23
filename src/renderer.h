@@ -146,7 +146,7 @@ typedef struct {
 /** 
  * @public
  * @memberof Renderer
- * @brief Initializes a Renderer.
+ * @brief Initializes the Renderer.
  * @param [in] r      Renderer to initialize. Can be NULL to allocate a new Renderer.
  * @param [in] window Voxel Window.
  * @param [in] vulkan Global Vulkan object. Set NULL when using OpenGL.
@@ -157,7 +157,7 @@ Renderer* renderer_init(Renderer* r, Window* window, Vulkan* vulkan);
 /** 
  * @public
  * @memberof Renderer
- * @brief Destroys a Renderer.
+ * @brief Destroys the Renderer.
  * @param [in] renderer Renderer to destroy.
  */
 void renderer_destroy(Renderer* renderer);
