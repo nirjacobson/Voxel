@@ -1,4 +1,4 @@
-# Voxel
+# %Voxel
 Voxel is a volumetric pixel painter. It’s similar to the original MS Paint program in a 3D, Minecraft-esque environment. It has an infinite draw area that is saved to a file as it is explored.
 
 ![Voxel](https://static.wixstatic.com/media/a278e6_21e6def0f9734c24b22250ea9127cc8c~mv2.png/v1/fill/w_976,h_475,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/a278e6_21e6def0f9734c24b22250ea9127cc8c~mv2.png)
