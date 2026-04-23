@@ -17,15 +17,15 @@
  */
 typedef struct {
     /// @private
-    /// @brief The location along the x-axis.
+    /// @brief The world location along the x-axis.
     int x;
 
     /// @private
-    /// @brief The location along the y-axis.
+    /// @brief The world location along the y-axis.
     int y;
 
     /// @private
-    /// @brief The location along the z-axis.
+    /// @brief The world location along the z-axis.
     int z;
 } ChunkID;
 
@@ -35,7 +35,7 @@ typedef struct {
  */
 typedef struct {
     /// @private
-    /// @brief Global Vulkan object or NULL if using OpenGL.
+    /// @brief %Global Vulkan object or NULL if using OpenGL.
     Vulkan* vulkan;
 
     /// @private
@@ -71,7 +71,7 @@ typedef struct {
  * @memberof Chunk
  * @brief Initializes a Chunk.
  * @param [in] c        Chunk to initialize. Can be NULL to allocate a new Chunk.
- * @param [in] vulkan   Global Vulkan object. Set NULL when using OpenGL.
+ * @param [in] vulkan   %Global Vulkan object. Set NULL when using OpenGL.
  * @param [in] width    The width of the Chunk in \ref Block "Blocks".
  * @param [in] height   The height of the Chunk in \ref Block "Blocks".
  * @param [in] length   The length of the Chunk in \ref Block "Blocks".
@@ -91,7 +91,7 @@ void chunk_destroy(Chunk* chunk);
 /** 
  * @public
  * @memberof Chunk
- * @brief (Re)generates the \ref Mesh "Meshes" for the Chunk.
+ * @brief (Re)generates the \ref Mesh "Meshes" for a Chunk.
  * @param [in] chunk Chunk to generate \ref Mesh "Meshes" for.
  */
 void chunk_mesh(Chunk* chunk);

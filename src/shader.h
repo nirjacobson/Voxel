@@ -167,7 +167,7 @@ void shader_program_3D_update_sun_position(ShaderProgram3D* shaderProgram3D, flo
 /**
  *  @private
  *  @memberof Renderer
- *  @brief Activates the 3D shader program.
+ *  @brief Activates the ShaderProgram3D.
  *  @param [in] shaderProgram3D Renderer ShaderProgram3D.
  */
 void shader_program_3D_use(ShaderProgram3D* shaderProgram3D);
@@ -246,7 +246,7 @@ void shader_program_2D_update_sampler(ShaderProgram2D* shaderProgram2D, GLint sa
 /**
  *  @private
  *  @memberof Renderer
- *  @brief Activates the 2D shader program.
+ *  @brief Activates the ShaderProgram2D.
  * @param [in] shaderProgram2D Renderer ShaderProgram2D.
  */
 void shader_program_2D_use(ShaderProgram2D* shaderProgram2D);

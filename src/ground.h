@@ -27,7 +27,7 @@ typedef struct {
  * @memberof Ground
  * @brief Initializes the Ground.
  * @param [in] g        Ground to initialize. Can be NULL to allocate a new Ground.
- * @param [in] vulkan   Global Vulkan object or NULL if using OpenGL.
+ * @param [in] vulkan   %Global Vulkan object or NULL if using OpenGL.
  * @param [in] length   The size of the Ground in width and length.
  * @return **g** or a new Ground if **g** was NULL.
  */

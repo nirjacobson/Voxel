@@ -36,8 +36,9 @@ typedef struct {
 
     /// @name Camera & projection matrix uniform block
     /// @{
+
     /// @private
-    /// @brief GPU-side buffers
+    /// @brief GPU-side buffers.
     VkBuffer* mcpBuffers;
 
     /// @private
@@ -84,7 +85,7 @@ typedef struct {
 
 /**
  * @class RendererRenderStateVulkan
- * @brief Renderer render state (Vulkan).
+ * @brief Renderer render state (%Vulkan).
  */
 typedef struct {
     /// @private
@@ -96,7 +97,7 @@ typedef struct {
     Pipeline2D pipeline2D;
 
     /// @private
-    /// @name General Vulkan state.
+    /// @name General Vulkan state
     /// @{
     VkQueue graphicsQueue;
     VkQueue presentQueue;
@@ -132,7 +133,7 @@ typedef struct {
     Window* window;
 
     /// @private
-    /// @brief Global Vulkan object or NULL if using OpenGL.
+    /// @brief %Global Vulkan object or NULL if using OpenGL.
     Vulkan* vulkan;
 
     /// @private
@@ -143,7 +144,7 @@ typedef struct {
         RendererRenderStateOpenGL opengl;
 
         /// @private
-        /// @brief Vulkan render state.
+        /// @brief %Vulkan render state.
         RendererRenderStateVulkan vulkan;
     } renderState;
     
@@ -155,7 +156,7 @@ typedef struct {
  * @brief Initializes the Renderer.
  * @param [in] r      Renderer to initialize. Can be NULL to allocate a new Renderer.
  * @param [in] window Voxel Window.
- * @param [in] vulkan Global Vulkan object. Set NULL when using OpenGL.
+ * @param [in] vulkan %Global Vulkan object. Set NULL when using OpenGL.
  * @return **r** or a new Renderer if **r** was NULL.
  */
 Renderer* renderer_init(Renderer* r, Window* window, Vulkan* vulkan);

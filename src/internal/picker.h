@@ -11,7 +11,7 @@
 
 /// @private
 /// @memberof Picker
-/// @brief Enact the current tool
+/// @brief Enacts the current tool
 /// @param picker    Voxel Picker.
 /// @param modifier1 Presence of the 1st of two modifiers to alter the action.
 /// @param modifier2 Presence of the 2nd of two modifiers to alter the action.

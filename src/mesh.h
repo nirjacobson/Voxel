@@ -56,7 +56,7 @@ typedef struct {
     Vertex vertices[4];
 
     /// @private
-    /// @brief The direction. See \ref DirectionalEnumerationConstants.
+    /// @brief Direction. See \ref DirectionalEnumerationConstants.
     char orientation;
 } Quad;
 
@@ -66,7 +66,7 @@ typedef struct {
  */
 typedef struct {
     /// @private
-    /// @brief Vertex buffer object (VBO).
+    /// @brief %Vertex buffer object (VBO).
     GLuint vbo;
 
     /// @private
@@ -80,7 +80,7 @@ typedef struct {
  */
 typedef struct {
     /// @private
-    /// @brief Vertex buffer object (VBO).
+    /// @brief %Vertex buffer object (VBO).
     VkBuffer vbo;
 
     /// @private
@@ -107,7 +107,7 @@ typedef struct {
  */
 typedef struct {
     /// @private
-    /// @brief Global Vulkan object or NULL if using OpenGL.
+    /// @brief %Global Vulkan object or NULL if using OpenGL.
     Vulkan* vulkan;
 
     /// @private
@@ -135,7 +135,7 @@ typedef struct {
  * @memberof Mesh
  * @brief Initializes a Mesh.
  * @param [in] m      Mesh to initialize. Can be NULL to allocate a new Mesh.
- * @param [in] vulkan Global Vulkan object. Set NULL when using OpenGL.
+ * @param [in] vulkan %Global Vulkan object. Set NULL when using OpenGL.
  * @return **m** or a new Mesh if **m** was NULL.
  */
 Mesh* mesh_init(Mesh* m, Vulkan* vulkan);
@@ -169,7 +169,7 @@ void mesh_calc_normals(Mesh* mesh);
 /** 
  * @public
  * @memberof Mesh
- * @brief Generates vertex buffers on the GPU and fills them.
+ * @brief Generates vertex buffer data and updates the buffers on the GPU.
  * @param [in] mesh Mesh to calculate the normals of.
  * @param [in] mode Whether the mesh is rendered solid or wireframe. See \ref MeshFillModes.
  */

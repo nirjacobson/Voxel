@@ -40,7 +40,7 @@ typedef struct {
  */
 typedef struct {
     /// @private
-    /// @brief Global Vulkan object or NULL if using OpenGL.
+    /// @brief %Global Vulkan object or NULL if using OpenGL.
     Vulkan* vulkan;
 
     /// @private
@@ -61,7 +61,7 @@ typedef struct {
  * @memberof World
  * @brief Initializes the World.
  * @param [in] world  World to initialize. Can be NULL to allocate a new World.
- * @param [in] vulkan Global Vulkan object. Set NULL when using OpenGL.
+ * @param [in] vulkan %Global Vulkan object. Set NULL when using OpenGL.
  * @param [in] name   Name of the save file sans file extension.
  * @param [out] new   Whether the World save file was created due to this function call or it already existed.
  * @return **world** or a new World if **world** was NULL.

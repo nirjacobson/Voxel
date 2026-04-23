@@ -16,11 +16,11 @@
  */
 typedef struct {
     /// @private
-    /// @brief The save file B+ tree index.
+    /// @brief The save file BPTree.
     BPTree bptree;
 
     /// @private
-    /// @brief The chunk Heap.
+    /// @brief The save file chunk Heap.
     Heap heap;
 } ChunkDAO;
 

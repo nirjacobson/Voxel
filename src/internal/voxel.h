@@ -29,7 +29,7 @@ void voxel_draw(Voxel* voxel);
 /** 
  * @private
  * @memberof Voxel
- * @brief Initializes Vulkan.
+ * @brief Initializes %Vulkan.
  * @param voxel Voxel.
  */
 void voxel_setup_vulkan(Voxel* voxel);
@@ -37,7 +37,7 @@ void voxel_setup_vulkan(Voxel* voxel);
 /** 
  * @private
  * @memberof Voxel
- * @brief Destroys Vulkan.
+ * @brief Destroys %Vulkan.
  * @param voxel Voxel.
  */
 void voxel_teardown_vulkan(Voxel* voxel);

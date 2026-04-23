@@ -13,7 +13,7 @@
 
 /**
  * @class WorldClearRegionCommand
- * @brief Command to clear a volume of \ref Block Blocks.
+ * @brief Command to clear a volume of \ref Block "Blocks".
  */
 typedef struct {
     /// @private
@@ -29,7 +29,7 @@ typedef struct {
     Box region;
 
     /// @private
-    /// @brief Contains the \ref Block Blocks cleared.
+    /// @brief Contains the \ref Block "Blocks" cleared.
     Chunk* chunk;
 } WorldClearRegionCommand;
 

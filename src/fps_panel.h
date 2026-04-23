@@ -14,7 +14,7 @@
 
 /**
  * @class FPSPanel
- * @brief Panel displaying the \ref Renderer "Renderer's" current rate of frames per second.
+ * @brief Panel displaying the \ref Renderer "Renderer's" current rate of frames per second (FPS).
  */
 typedef struct {
     /// @private
@@ -22,7 +22,7 @@ typedef struct {
     Panel panel;
 
     /// @brief
-    /// @brief Most recently recorded FPS.
+    /// @brief Most recently recorded frames per second (FPS).
     float fps;
 } FPSPanel;
 
@@ -57,7 +57,7 @@ void fps_panel_set_fps(FPSPanel* fpsPanel, float fps);
 /** 
  * @public
  * @memberof FPSPanel
- * @brief Sets the panel location on the screen.
+ * @brief Sets the Panel location on the screen.
  * @param [in] fpsPanel FPSPanel to position.
  * @param [in] x        The global x-coordinate of the FPSPanel.
  * @param [in] y        The global y-coordinate of the FPSPanel.

@@ -20,7 +20,7 @@
  */
 typedef struct {
     /// @private
-    /// @brief Global Vulkan object or NULL if using OpenGL.
+    /// @brief %Global Vulkan object or NULL if using OpenGL.
     Vulkan* vulkan;
 
     /// @private
@@ -80,7 +80,7 @@ typedef struct {
  * @memberof Camera
  * @brief Initializes a Camera.
  * @param [in] c Camera to initialize. Can be NULL to allocate a new Camera.
- * @param [in] vulkan Global Vulkan object. Set NULL when using OpenGL.
+ * @param [in] vulkan %Global Vulkan object. Set NULL when using OpenGL.
  * @return **c** or a new Camera if **c** was NULL.
  */
 Camera* camera_init(Camera* c, Vulkan* vulkan);

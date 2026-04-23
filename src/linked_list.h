@@ -107,8 +107,8 @@ void linked_list_insert_after(LinkedList* list, LinkedListNode* node, void* data
  * @memberof LinkedList
  * @brief Iterates over each element in the list and invokes a function on it.
  * @param [in] list LinkedList to insert into.
- * @param [in] comparison Callback function invoked on each list element.
- * @param [in] userData Is passed to **comparison** on each invokation. Can be any value.
+ * @param [in] visitor Callback function invoked on each list element.
+ * @param [in] userData Is passed to **visitor** on each invokation. Can be any value.
  */
 void linked_list_foreach(LinkedList* list, void (*visitor)(void*, void*), void* userData);
 
@@ -125,7 +125,7 @@ LinkedListNode* linked_list_find(LinkedList* list, void* data, char (*equals_fn)
 /** 
  * @public
  * @memberof LinkedList
- * @brief Removes the a node from the list.
+ * @brief Removes a node from the list.
  * @param [in] list LinkedList to remove from.
  * @param [in] node The LinkedListNode to remove.
  * @param [in] destroy_fn Callback function invoked on the list element in order to destroy it.

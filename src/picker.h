@@ -138,8 +138,8 @@ void picker_destroy(Picker* picker);
  * @param [in] picker Picker to destroy.
  * @param [in] camera A Voxel Camera. The inverse of its projection matrix is used to calculate the world position \
  *                    of the Picker based on the coordinates of the mouse.
- * @param [in] mouseX x-coordinate of the global mouse position.
- * @param [in] mouseY y-coordinate of the global mouse position.
+ * @param [in] mouseX X-coordinate of the global mouse position.
+ * @param [in] mouseY Y-coordinate of the global mouse position.
  */
 void picker_update(Picker* picker, Camera* camera, float mouseX, float mouseY);
 

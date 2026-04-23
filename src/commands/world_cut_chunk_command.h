@@ -41,8 +41,7 @@ typedef struct {
     int toLocation[3];
 
     /// @private
-    /// @brief Rotation to apply to the Chunk before setting it in the World. \
-               See world_set_chunk() implementation for details.
+    /// @brief Rotation to apply to the Chunk before setting it in the World. See world_set_chunk() implementation for details.
     int rotation;
 } WorldCutChunkCommand;
 
@@ -54,8 +53,7 @@ typedef struct {
  * @param [in] chunk        Chunk to set in the World.
  * @param [in] fromLocation (x, y, z) origin in the World.
  * @param [in] toLocation   (x, y, z) destination in the World.
- * @param [in] rotation Rotation to apply to the Chunk before setting it in the World. \
-                        See world_set_chunk() implementation for details.
+ * @param [in] rotation Rotation to apply to the Chunk before setting it in the World. See world_set_chunk() implementation for details.
  * @returns A WorldCutChunkCommand.
  */
 WorldCutChunkCommand* world_cut_chunk_command_init(World* world, Chunk* chunk, int* fromLocation, int* toLocation, int rotation);

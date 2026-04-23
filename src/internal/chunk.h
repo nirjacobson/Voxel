@@ -11,10 +11,14 @@
 
 /* Linked list processing callbacks */
 
+/// @private
+/// @name Linked list processing callbacks
+/// @{
+
 /** 
  * @private
  * @memberof Chunk
- * @brief Linked list processing callback to destroy one Mesh in the list of \ref Mesh "Meshes".
+ * @brief LinkedList processing callback to destroy one Mesh in the list of \ref Mesh "Meshes".
  * @param [in] ptr Resolves to a Mesh in the list of \ref Mesh "Meshes".
  */
 void destroy_mesh(void* ptr);
@@ -36,5 +40,7 @@ char meshes_are_equal(void* ptrA, void* ptrB);
  * @param [in] userData Unused but required by the LinkedList processor.
  */
 void prepare_mesh(void* node, void* userData);
+
+/// @}
 
 #endif // CHUNK_INTERNAL_H

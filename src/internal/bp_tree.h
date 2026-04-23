@@ -15,7 +15,7 @@
 /**
  * @class BPTreeHeader
  * @brief B+ tree header.
- * @details HeapHeader and BPTreeHeader are read from the same page in the save file.
+ * @details HeapHeader and BPTreeHeader are read from the same offset in the save file.
  */
 typedef struct {
     /// @private

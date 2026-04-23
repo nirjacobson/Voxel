@@ -14,8 +14,8 @@
 /** 
  * @private
  * @memberof Panel
- * @brief LinkedList processing callback for finding an ActionRegion under a Panel-local location.
- * @param [in] coordsPtr Two-element array containing a Panel-local location.
+ * @brief LinkedList processing callback for finding an ActionRegion under a \ref Panel "Panel's" local location.
+ * @param [in] coordsPtr Two-element array containing a \ref Panel "Panel's" local location.
  * @param [in] actionRegionPtr The ActionRegion being considered.
  * @returns 1 if the ActionRegion is under the given coordinates, 0 otherwise.
  */

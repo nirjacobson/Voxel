@@ -30,7 +30,7 @@ struct ActionRegion;
  */
 typedef struct {
     /// @private
-    /// @brief Parent panel.
+    /// @brief Parent Panel.
     struct Panel* panel;
 
     /// @private
@@ -38,11 +38,11 @@ typedef struct {
     struct ActionRegion* actionRegion;
 
     /// @private
-    /// @brief The ActionRegion-local x-coordinate of the event.
+    /// @brief The \ref ActionRegion "ActionRegion's" local x-coordinate of the event.
     unsigned int x;
 
     /// @private
-    /// @brief The ActionRegion-local y-coordinate of the event.
+    /// @brief The \ref ActionRegion "ActionRegion's" local y-coordinate of the event.
     unsigned int y;
 } ActionRegionArgs;
 
@@ -80,7 +80,7 @@ typedef struct ActionRegion {
  */
 typedef struct {
     /// @private
-    /// @brief Vertex buffer object (VBO).
+    /// @brief %Vertex buffer object (VBO).
     unsigned int vbo;
 
     /// @private
@@ -94,7 +94,7 @@ typedef struct {
  */
 typedef struct {
     /// @private
-    /// @brief Vertex buffer object (VBO).
+    /// @brief %Vertex buffer object (VBO).
     VkBuffer vbo;
 
     /// @private
@@ -132,7 +132,7 @@ typedef struct Panel {
     Renderer* renderer;
 
     /// @private
-    /// @brief Mesh render state.
+    /// @brief Panel render state.
     union {
         /// @private
         /// @brief OpenGL render state.
@@ -148,7 +148,7 @@ typedef struct Panel {
     cairo_surface_t *surface;
 
     /// @private
-    /// @brief Cairo handle
+    /// @brief Cairo handle.
     cairo_t *cr;
 
     /// @private
@@ -184,7 +184,7 @@ typedef struct Panel {
 /** 
  * @public
  * @memberof Panel
- * @brief Initializes a Mesh.
+ * @brief Initializes a Panel.
  * @param [in] p            Panel to initialize. Can be NULL to allocate a new Panel.
  * @param [in] renderer     Voxel Renderer.
  * @param [in] owner        Panel owner.
@@ -216,18 +216,18 @@ void panel_add_action_region(Panel* panel, ActionRegion* actionRegion);
 /** 
  * @public
  * @memberof Panel
- * @brief Enacts a mouse press or release at a panel-local location.
+ * @brief Enacts a mouse press or release at a \ref Panel "Panel's" local location.
  * @param [in] panel  Panel to add to.
  * @param [in] action Event to enact.
- * @param [in] x      The Panel-local x-coordinate of the event.
- * @param [in] y      The Panel-local y-coordinate of the event.
+ * @param [in] x      The \ref Panel "Panel's" local x-coordinate of the event.
+ * @param [in] y      The \ref Panel "Panel's" local y-coordinate of the event.
  */
 void panel_action(Panel* panel, char action, unsigned int x, unsigned int y);
 
 /** 
  * @public
  * @memberof Panel
- * @brief Sets the panel location on the screen.
+ * @brief Sets a \ref Panel "Panel's" location on the screen.
  * @param [in] panel  Panel to position.
  * @param [in] x      The global x-coordinate of the Panel.
  * @param [in] y      The global y-coordinate of the Panel.
@@ -237,7 +237,7 @@ void panel_set_position(Panel* panel, int x, int y);
 /** 
  * @public
  * @memberof Panel
- * @brief Moves the panel by a given amount in each direction.
+ * @brief Moves a Panel by a given amount in each direction.
  * @param [in] panel  Panel to move.
  * @param [in] x      The x increment.
  * @param [in] y      The y increment.
@@ -247,7 +247,7 @@ void panel_translate(Panel* panel, int x, int y);
 /** 
  * @public
  * @memberof Panel
- * @brief Re(generates) the texture of the Panel from its drawing surface.
+ * @brief Re(generates) the texture of a Panel from its drawing surface.
  * @param [in] panel  Panel to (re)texture.
  */
 void panel_texture(Panel* panel);
@@ -268,7 +268,7 @@ void panel_hide(Panel* panel);
  */
 typedef struct PanelManager {
     /// @private
-    /// @brief \ref Panel "Panels" on the screen
+    /// @brief \ref Panel "Panels" on the screen.
     LinkedList panels;
 
     /// @private

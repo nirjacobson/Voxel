@@ -29,7 +29,7 @@ typedef struct {
     Chunk* chunk;
 
     /// @private
-    /// @brief The Blocks that existed in the destination before execution.
+    /// @brief The \ref Block "Blocks" that existed in the destination before execution.
     Chunk* chunkBefore;
 
     /// @private
@@ -37,8 +37,7 @@ typedef struct {
     int toLocation[3];
 
     /// @private
-    /// @brief Rotation to apply to the Chunk before setting it in the World. \
-               See world_set_chunk() implementation for details.
+    /// @brief Rotation to apply to the Chunk before setting it in the World. See world_set_chunk() implementation for details.
     int rotation;
 } WorldCopyChunkCommand;
 
@@ -49,8 +48,7 @@ typedef struct {
  * @param [in] world    Voxel World.
  * @param [in] chunk    Chunk to set in the World.
  * @param [in] location (x, y, z) destination in the World.
- * @param [in] rotation Rotation to apply to the Chunk before setting it in the World. \
-                        See world_set_chunk() implementation for details.
+ * @param [in] rotation Rotation to apply to the Chunk before setting it in the World. See world_set_chunk() implementation for details.
  * @returns A WorldCopyChunkCommand.
  */
 WorldCopyChunkCommand* world_copy_chunk_command_init(World* world, Chunk* chunk, int* location, int rotation);

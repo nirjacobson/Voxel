@@ -119,10 +119,15 @@ void renderer_2D_update_sampler(Renderer* renderer, GLint sampler);
  */
 void renderer_2D_use(Renderer* renderer);
 
+/// @private
+/// @memberof Renderer
+/// @name Linked list processing callbacks
+/// @{
+
 /**
  *  @private
  *  @memberof Renderer
- *  @brief LinkedList processing callback for rendering \ref Mesh "Meshes" in a LinkedList.
+ *  @brief LinkedList processing callback for rendering \ref Mesh "Meshes" in a LinkedList (OpenGL).
  *  @param [in] ptr         Resolves to a Mesh.
  *  @param [in] rendererPtr Resolves to the Voxel Renderer.
  */
@@ -131,7 +136,7 @@ void render_mesh(void* ptr, void* rendererPtr);
 /**
  *  @private
  *  @memberof Renderer
- *  @brief LinkedList processing callback for rendering \ref Chunk "Chunks" in a LinkedList.
+ *  @brief LinkedList processing callback for rendering \ref Chunk "Chunks" in a LinkedList (OpenGL).
  *  @param [in] worldChunkPtr Resolves to a Chunk.
  *  @param [in] rendererPtr   Resolves to the Voxel Renderer.
  */
@@ -140,11 +145,40 @@ void render_world_chunk(void* worldChunkPtr, void* rendererPtr);
 /**
  *  @private
  *  @memberof Renderer
- *  @brief LinkedList processing callback for rendering \ref Panel "Panels" in a LinkedList.
+ *  @brief LinkedList processing callback for rendering \ref Panel "Panels" in a LinkedList (OpenGL).
  *  @param [in] panelPtr    Resolves to a Chunk.
  *  @param [in] rendererPtr Resolves to the Voxel Renderer.
  */
 void render_panel(void* panelPtr, void* rendererPtr);
+
+/** 
+ * @private
+ * @memberof Renderer
+ * @brief LinkedList processing callback for recording a Mesh render to a %Vulkan command buffer.
+ * @param [in] ptr         Resolves to a Mesh.
+ * @param [in] rendererPtr Resolves to the Voxel Renderer.
+ */
+void record_mesh(void* ptr, void* rendererPtr);
+
+/** 
+ * @private
+ * @memberof Renderer
+ * @brief LinkedList processing callback for recording a WorldChunk render to a %Vulkan command buffer.
+ * @param [in] ptr         Resolves to a WorldChunk.
+ * @param [in] rendererPtr Resolves to the Voxel Renderer.
+ */
+void record_world_chunk(void* worldChunkPtr, void* rendererPtr);
+
+/** 
+ * @private
+ * @memberof Renderer
+ * @brief LinkedList processing callback for recording a Panel render to a %Vulkan command buffer.
+ * @param [in] ptr         Resolves to a Panel.
+ * @param [in] rendererPtr Resolves to the Voxel Renderer.
+ */
+void record_panel(void* panelPtr, void* rendererPtr);
+
+/// @}
 
 /**
  *  @private
@@ -152,7 +186,7 @@ void render_panel(void* panelPtr, void* rendererPtr);
  *  @brief Renders the Ground.
  *  @param [in] renderer Voxel Renderer.
  *  @param [in] ground   Voxel Ground.
- *  @param [in] camera   Active Voxel Camera.
+ *  @param [in] camera   Voxel Camera.
  */
 void renderer_render_ground(Renderer* renderer, Ground* ground, Camera* camera);
 
@@ -238,7 +272,7 @@ void renderer_3D_create_descriptor_set_layout(Renderer* renderer, VkDescriptorSe
  *  @private
  *  @memberof Renderer
  *  @brief Initializes the vertex input binding description.
- *  @param [out] description Vertex input binding description.
+ *  @param [out] description V%ertex input binding description.
  */
 void renderer_3D_get_binding_description(VkVertexInputBindingDescription* description);
 
@@ -247,7 +281,7 @@ void renderer_3D_get_binding_description(VkVertexInputBindingDescription* descri
  *  @memberof Renderer
  *  @brief Initializes the vertex input attribute descriptions.
  *  @param [in]  renderer    Voxel Renderer.
- *  @param [out] description Vertex input attribute descriptions.
+ *  @param [out] description %Vertex input attribute descriptions.
  *  @param [out] count       The number of descriptions created.
  */
 void renderer_3D_get_attribute_descriptions(VkVertexInputAttributeDescription** descriptions, int* count);
@@ -294,33 +328,6 @@ void renderer_2D_get_attribute_descriptions(VkVertexInputAttributeDescription** 
  *  @param [in]  renderer    Voxel Renderer.
  */
 void renderer_2D_create_pipeline(Renderer* renderer);
-
-/** 
- * @private
- * @memberof Renderer
- * @brief LinkedList processing callback for recording a Mesh render to a command buffer.
- * @param [in] ptr         Resolves to a Mesh.
- * @param [in] rendererPtr Resolves to the Voxel Renderer.
- */
-void record_mesh(void* ptr, void* rendererPtr);
-
-/** 
- * @private
- * @memberof Renderer
- * @brief LinkedList processing callback for recording a WorldChunk render to a command buffer.
- * @param [in] ptr         Resolves to a WorldChunk.
- * @param [in] rendererPtr Resolves to the Voxel Renderer.
- */
-void record_world_chunk(void* worldChunkPtr, void* rendererPtr);
-
-/** 
- * @private
- * @memberof Renderer
- * @brief LinkedList processing callback for recording a Panel render to a command buffer.
- * @param [in] ptr         Resolves to a Panel.
- * @param [in] rendererPtr Resolves to the Voxel Renderer.
- */
-void record_panel(void* panelPtr, void* rendererPtr);
 
 /** 
  * @private
@@ -407,7 +414,7 @@ void renderer_cleanup_swap_chain(Renderer* renderer);
  *  @memberof Renderer
  *  @brief Updates the camera & projection uniform block.
  *  @param [in]  renderer    Voxel Renderer.
- *  @param [in]  camera      Active Voxel Camera.
+ *  @param [in]  camera      Voxel Camera.
  */
 void renderer_3D_update_uniforms(Renderer* renderer, Camera* camera);
 
@@ -440,7 +447,7 @@ void renderer_3D_record_mesh(Renderer* renderer, Mesh* mesh, char mode);
  *  @memberof Renderer
  *  @brief Records a Chunk render to the current command buffer.
  *  @param [in]  renderer      Voxel Renderer.
- *  @param [in]  position      World location of **chunk**.
+ *  @param [in]  position      %World location of **chunk**.
  */
 void renderer_3D_record_chunk(Renderer* renderer, Chunk* chunk, float* position);
 

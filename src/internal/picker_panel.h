@@ -12,6 +12,7 @@
 
 #include "../picker_panel.h"
 
+/// @private
 /// @memberof PickerPanel
 /// @name PickerPanel dimensions
 /// @{
@@ -19,9 +20,11 @@
 #define PICKER_PANEL_HEIGHT         176
 /// @}
 
+/// @private
 /// @memberof PickerPanel
 /// @name PickerPanel element locations
 /// @{
+
 #define PENCIL_BUTTON_X                    8
 #define PENCIL_BUTTON_Y                   24
 #define ERASER_BUTTON_X                   46
@@ -40,6 +43,7 @@
 #define BLUE_BAR_Y                        24
 #define PALETTE_X                        191
 #define PALETTE_Y                         48
+
 /// @}
 
 /* Action region callbacks */

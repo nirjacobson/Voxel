@@ -19,7 +19,7 @@
  */
 typedef struct {
     /// @private
-    /// @brief Global Vulkan object or NULL if using OpenGL.
+    /// @brief %Global Vulkan object or NULL if using OpenGL.
     Vulkan* vulkan;
 
     /// @private
@@ -56,7 +56,7 @@ typedef struct {
  * @memberof Box
  * @brief Initializes a Box.
  * @param [in] b Box to initialize. Can be NULL to allocate a new Box.
- * @param [in] vulkan Global Vulkan object. Set NULL when using OpenGL.
+ * @param [in] vulkan %Global Vulkan object. Set NULL when using OpenGL.
  * @return **b** or a new Box if **b** was NULL.
  */
 Box* box_init(Box* b, Vulkan* vulkan);
