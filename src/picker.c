@@ -155,23 +155,23 @@ void picker_act(Picker* picker, char modifier1, char modifier2) {
     }
 }
 
-Box picker_merge_selections(Box* selectionA, Box* selectionB) {
+Box picker_merge_selections(Box* boxA, Box* boxB) {
     Box merged;
-    box_init(&merged, selectionA->vulkan);
+    box_init(&merged, boxA->vulkan);
 
-    merged.position[0] = MIN(selectionA->position[0], selectionB->position[0]);
-    merged.position[1] = MIN(selectionA->position[1], selectionB->position[1]);
-    merged.position[2] = MIN(selectionA->position[2], selectionB->position[2]);
+    merged.position[0] = MIN(boxA->position[0], boxB->position[0]);
+    merged.position[1] = MIN(boxA->position[1], boxB->position[1]);
+    merged.position[2] = MIN(boxA->position[2], boxB->position[2]);
 
     float endpointA[] = {
-        selectionA->position[0] + selectionA->width,
-        selectionA->position[1] + selectionA->height,
-        selectionA->position[2] + selectionA->length
+        boxA->position[0] + boxA->width,
+        boxA->position[1] + boxA->height,
+        boxA->position[2] + boxA->length
     };
     float endpointB[] = {
-        selectionB->position[0] + selectionB->width,
-        selectionB->position[1] + selectionB->height,
-        selectionB->position[2] + selectionB->length
+        boxB->position[0] + boxB->width,
+        boxB->position[1] + boxB->height,
+        boxB->position[2] + boxB->length
     };
     float mergedEndpoint[] = {
         MAX(endpointA[0], endpointB[0]),

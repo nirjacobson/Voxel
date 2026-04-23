@@ -8,7 +8,7 @@
 /** 
  * @private
  * @memberof Panel
- * @brief Linked list processing callback for finding an ActionRegion under a Panel-local location.
+ * @brief LinkedList processing callback for finding an ActionRegion under a Panel-local location.
  * @param [in] coordsPtr Two-element array containing a Panel-local location.
  * @param [in] actionRegionPtr The ActionRegion being considered.
  * @returns 1 if the ActionRegion is under the given coordinates, 0 otherwise.
@@ -18,7 +18,7 @@ char coords_over_action_region(void* coordsPtr, void* actionRegionPtr);
 /** 
  * @private
  * @memberof PanelManager
- * @brief Linked list processing callback for finding a Panel under a global screen location.
+ * @brief LinkedList processing callback for finding a Panel under a global screen location.
  * @param [in] coordsPtr Two-element array containing a global screen location.
  * @param [in] panelPtr The Panel being considered.
  * @returns 1 if the Panel is under the given coordinates, 0 otherwise.

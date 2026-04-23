@@ -180,10 +180,10 @@ typedef struct Panel {
  * @memberof Panel
  * @brief Initializes a Mesh.
  * @param [in] p            Panel to initialize. Can be NULL to allocate a new Panel.
- * @param [in] renderer     The Voxel Renderer.
- * @param [in] owner        The panel owner.
+ * @param [in] renderer     Voxel Renderer.
+ * @param [in] owner        Panel owner.
  * @param [in] drawCallback Callback used to (re)draw the panel.
- * @param [in] panelManager The Voxel PanelManager.
+ * @param [in] panelManager Voxel PanelManager.
  * @param [in] width        Width of the panel.
  * @param [in] height       Height of the panel.
  * @return **p** or a new Panel if **p** was NULL.
