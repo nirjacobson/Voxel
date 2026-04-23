@@ -1,3 +1,9 @@
+/**
+ * @file shader.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "shader.h"
 
 GLuint shader_create(const unsigned char* src, GLenum shaderType) {

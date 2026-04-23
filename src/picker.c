@@ -1,4 +1,10 @@
-#include "picker.h"
+/**
+ * @file picker.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
+ #include "picker.h"
 #include "internal/picker.h"
 
 void picker_init(Picker* p, World* world, UndoStack* undoStack) {

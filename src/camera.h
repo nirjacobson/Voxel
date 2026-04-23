@@ -1,3 +1,9 @@
+/**
+ * @file camera.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef CAMERA_H
 #define CAMERA_H
 

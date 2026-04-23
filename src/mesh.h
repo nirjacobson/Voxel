@@ -1,3 +1,9 @@
+/**
+ * @file mesh.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef MESH_H
 #define MESH_H
 

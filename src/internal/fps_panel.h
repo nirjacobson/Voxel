@@ -1,3 +1,9 @@
+/**
+ * @file internal/fps_panel.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef FPS_PANEL_INTERNAL_H
 #define FPS_PANEL_INTERNAL_H
 

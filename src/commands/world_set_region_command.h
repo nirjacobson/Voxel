@@ -1,3 +1,9 @@
+/**
+ * @file world_set_region_command.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef WORLD_SET_REGION_COMMAND
 #define WORLD_SET_REGION_COMMAND
 

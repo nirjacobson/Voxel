@@ -1,3 +1,9 @@
+/**
+ * @file ground.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef GROUND_H
 #define GROUND_H
 

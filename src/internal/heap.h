@@ -1,3 +1,9 @@
+/**
+ * @file internal/heap.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef HEAP_INTERNAL_H
 #define HEAP_INTERNAL_H
 

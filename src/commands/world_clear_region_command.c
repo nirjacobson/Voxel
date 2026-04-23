@@ -1,3 +1,9 @@
+/**
+ * @file world_clear_region_command.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "world_clear_region_command.h"
 
 WorldClearRegionCommand* world_clear_region_command_init(World* world, Box* region) {

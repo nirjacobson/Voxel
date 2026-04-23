@@ -1,3 +1,9 @@
+/**
+ * @file undo_stack.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "undo_stack.h"
 
 void destroy_command(void* commandPtr) {

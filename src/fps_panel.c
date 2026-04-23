@@ -1,3 +1,9 @@
+/**
+ * @file fps_panel.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "fps_panel.h"
 #include "internal/fps_panel.h"
 

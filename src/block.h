@@ -1,3 +1,9 @@
+/**
+ * @file block.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef BLOCK_H
 #define BLOCK_H
 

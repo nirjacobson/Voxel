@@ -1,4 +1,10 @@
-#ifndef BLOCK_INTERNAL_H
+/**
+ * @file internal/block.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
+ #ifndef BLOCK_INTERNAL_H
 #define BLOCK_INTERNAL_H
 
 #include "../block.h"

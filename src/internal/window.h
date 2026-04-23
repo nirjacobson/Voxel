@@ -1,3 +1,9 @@
+/**
+ * @file internal/window.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef WINDOW_INTERNAL_H
 #define WINDOW_INTERNAL_H
 

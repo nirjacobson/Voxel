@@ -1,3 +1,9 @@
+/**
+ * @file panel.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef PANEL_H
 #define PANEL_H
 

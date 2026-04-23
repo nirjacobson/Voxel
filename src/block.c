@@ -1,4 +1,10 @@
-#include "block.h"
+/**
+ * @file block.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
+ #include "block.h"
 #include "internal/block.h"
 
 char block_is_active(Block* block) {

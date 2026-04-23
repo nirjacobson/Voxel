@@ -1,4 +1,10 @@
-#ifndef MESH_INTERNAL_H
+/**
+ * @file internal/mesh.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
+ #ifndef MESH_INTERNAL_H
 #define MESH_INTERNAL_H
 
 #include "../mesh.h"

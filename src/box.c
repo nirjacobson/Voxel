@@ -1,3 +1,9 @@
+/**
+ * @file box.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "box.h"
 
 Box* box_init(Box* b, Vulkan* vulkan) {

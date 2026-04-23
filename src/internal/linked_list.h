@@ -1,3 +1,9 @@
+/**
+ * @file internal/linked_list.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef LINKED_LIST_INTERNAL_H
 #define LINKED_LIST_INTERNAL_H
 

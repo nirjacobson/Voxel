@@ -1,3 +1,9 @@
+/**
+ * @file world.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "world.h"
 #include "internal/world.h"
 

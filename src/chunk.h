@@ -1,3 +1,9 @@
+/**
+ * @file chunk.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef CHUNK_H
 #define CHUNK_H
 

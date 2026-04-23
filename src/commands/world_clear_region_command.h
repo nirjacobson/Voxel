@@ -1,3 +1,9 @@
+/**
+ * @file world_clear_region_command.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef WORLD_CLEAR_REGION_COMMAND_H
 #define WORLD_CLEAR_REGION_COMMAND_H
 

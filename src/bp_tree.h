@@ -1,4 +1,10 @@
-#ifndef BP_TREE_H
+/**
+ * @file bp_tree.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
+ #ifndef BP_TREE_H
 #define BP_TREE_H
 
 #include <stdio.h>

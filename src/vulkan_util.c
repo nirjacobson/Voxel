@@ -1,3 +1,9 @@
+/**
+ * @file vulkan_util.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "vulkan_util.h"
 
 #ifdef NODEBUG

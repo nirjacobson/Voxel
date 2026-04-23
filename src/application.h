@@ -1,3 +1,9 @@
+/**
+ * @file application.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef APPLICATION_H
 #define APPLICATION_H
 

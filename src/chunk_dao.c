@@ -1,3 +1,9 @@
+/**
+ * @file chunk_dao.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "chunk_dao.h"
 
 ChunkDAO* chunk_dao_init(ChunkDAO* cd, const char* worldName, bool* new) {

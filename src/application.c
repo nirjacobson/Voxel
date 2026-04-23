@@ -1,3 +1,9 @@
+/**
+ * @file application.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "application.h"
 
 Application* application_init(Application* a, void* owner, ApplicationFn setup, ApplicationFn main, ApplicationFn resize, ApplicationFn teardown) {

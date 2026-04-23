@@ -1,4 +1,10 @@
-#include "world_copy_chunk_command.h"
+/**
+ * @file world_copy_chunk_command.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
+ #include "world_copy_chunk_command.h"
 
 WorldCopyChunkCommand* world_copy_chunk_command_init(World* world, Chunk* chunk, int* location, int rotation) {
     WorldCopyChunkCommand* command = NEW(WorldCopyChunkCommand, 1);

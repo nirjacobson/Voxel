@@ -1,3 +1,9 @@
+/**
+ * @file instructions_panel.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "instructions_panel.h"
 #include "internal/instructions_panel.h"
 

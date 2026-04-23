@@ -1,3 +1,9 @@
+/**
+ * @file box.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef BOX_H
 #define BOX_H
 

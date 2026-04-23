@@ -1,3 +1,9 @@
+/**
+ * @file chunk.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "chunk.h"
 #include "internal/chunk.h"
 

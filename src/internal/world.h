@@ -1,3 +1,9 @@
+/**
+ * @file internal/world.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef WORLD_INTERNAL_H
 #define WORLD_INTERNAL_H
 

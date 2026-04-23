@@ -1,3 +1,9 @@
+/**
+ * @file internal/renderer.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef RENDERER_INTERNAL_H
 #define RENDERER_INTERNAL_H
 

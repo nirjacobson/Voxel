@@ -1,3 +1,9 @@
+/**
+ * @file voxel.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef VOXEL_H
 #define VOXEL_H
 

@@ -1,3 +1,9 @@
+/**
+ * @file world_copy_chunk_command.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef WORLD_COPY_CHUNK_COMMAND
 #define WORLD_COPY_CHUNK_COMMAND
 

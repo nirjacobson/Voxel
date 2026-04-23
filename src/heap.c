@@ -1,4 +1,10 @@
-#include "heap.h"
+/**
+ * @file heap.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
+ #include "heap.h"
 #include "internal/heap.h"
 
 Heap* heap_init(Heap* h, const char* name, bool* new) {

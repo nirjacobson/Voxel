@@ -1,3 +1,9 @@
+/**
+ * @file internal/voxel.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef VOXEL_INTERNAL_H
 #define VOXEL_INTERNAL_H
 

@@ -1,3 +1,9 @@
+/**
+ * @file world_set_region_command.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "world_set_region_command.h"
 
 WorldSetRegionCommand* world_set_region_command_init(World* world, Box* region, uint16_t color) {

@@ -1,4 +1,10 @@
-#ifndef HEAP_H
+/**
+ * @file heap.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
+ #ifndef HEAP_H
 #define HEAP_H
 
 #include <stdio.h>

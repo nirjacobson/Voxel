@@ -1,3 +1,9 @@
+/**
+ * @file internal/bp_tree.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef BP_TREE_INTERNAL_H
 #define BP_TREE_INTERNAL_H
 

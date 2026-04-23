@@ -1,3 +1,9 @@
+/**
+ * @file undo_stack.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef UNDO_STACK_H
 #define UNDO_STACK_H
 

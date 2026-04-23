@@ -1,3 +1,9 @@
+/**
+ * @file internal/instructions_panel.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef INSTRUCTIONS_PANEL_INTERNAL_H
 #define INSTRUCTIONS_PANEL_INTERNAL_H
 

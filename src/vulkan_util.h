@@ -1,3 +1,9 @@
+/**
+ * @file vulkan_util.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef VULKAN_UTIL_H
 #define VULKAN_UTIL_H
 

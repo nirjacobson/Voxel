@@ -1,3 +1,9 @@
+/**
+ * @file internal/shader.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef SHADER_INTERNAL_H
 #define SHADER_INTERNAL_H
 

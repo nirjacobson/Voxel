@@ -1,3 +1,9 @@
+/**
+ * @file world_cut_chunk_command.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "world_cut_chunk_command.h"
 
 WorldCutChunkCommand* world_cut_chunk_command_init(World* world, Chunk* chunk, int* fromLocation, int* toLocation, int rotation) {

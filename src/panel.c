@@ -1,3 +1,9 @@
+/**
+ * @file panel.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "panel.h"
 #include "internal/panel.h"
 

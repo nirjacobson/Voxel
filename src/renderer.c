@@ -1,3 +1,9 @@
+/**
+ * @file renderer.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "renderer.h"
 #include "internal/renderer.h"
 

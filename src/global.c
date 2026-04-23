@@ -1,3 +1,9 @@
+/**
+ * @file global.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "global.h"
 
 float X[3] = {1.0, 0.0, 0.0};

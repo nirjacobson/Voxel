@@ -1,3 +1,9 @@
+/**
+ * @file renderer.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef RENDERER_H
 #define RENDERER_H
 

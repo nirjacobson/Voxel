@@ -1,3 +1,9 @@
+/**
+ * @file picker.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef PICKER_H
 #define PICKER_H
 

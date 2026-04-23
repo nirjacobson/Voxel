@@ -1,3 +1,9 @@
+/**
+ * @file linked_list.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "linked_list.h"
 #include "internal/linked_list.h"
 

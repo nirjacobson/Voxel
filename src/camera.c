@@ -1,4 +1,10 @@
-#include "camera.h"
+/**
+ * @file camera.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
+ #include "camera.h"
 
 Camera* camera_init(Camera* c, Vulkan* vulkan) {
     Camera* camera = c ? c : NEW(Camera, 1);

@@ -1,3 +1,9 @@
+/**
+ * @file matrix.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "matrix.h"
 
 float mat2_determinate(float* mat2s) {

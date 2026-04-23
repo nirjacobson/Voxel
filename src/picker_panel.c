@@ -1,4 +1,10 @@
-#include "picker_panel.h"
+/**
+ * @file picker_panel.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
+ #include "picker_panel.h"
 #include "internal/picker_panel.h"
 
 #include "voxel.h"

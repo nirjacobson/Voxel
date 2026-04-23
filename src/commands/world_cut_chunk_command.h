@@ -1,3 +1,9 @@
+/**
+ * @file world_cut_chunk_command.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef WORLD_CUT_CHUNK_COMMAND
 #define WORLD_CUT_CHUNK_COMMAND
 

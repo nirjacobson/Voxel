@@ -1,3 +1,9 @@
+/**
+ * @file window.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef WINDOW_H
 #define WINDOW_H
 

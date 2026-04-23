@@ -1,3 +1,9 @@
+/**
+ * @file window.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "window.h"
 #include "internal/window.h"
 #include "voxel.h"

@@ -1,3 +1,9 @@
+/**
+ * @file chunk_dao.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef CHUNK_DAO_H
 #define CHUNK_DAO_H
 

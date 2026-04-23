@@ -1,3 +1,9 @@
+/**
+ * @file internal/picker_panel.h
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #ifndef PICKER_PANEL_INTERNAL_H
 #define PICKER_PANEL_INTERNAL_H
 

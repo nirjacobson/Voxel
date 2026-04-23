@@ -1,3 +1,9 @@
+/**
+ * @file ground.c
+ * @author Nir Jacobson
+ * @date 2026-04-23
+ */
+
 #include "ground.h"
 
 Ground* ground_init(Ground* g, Vulkan* vulkan, int length) {
