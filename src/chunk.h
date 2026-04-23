@@ -65,6 +65,7 @@ typedef struct {
  * @memberof Chunk
  * @brief Initializes a Chunk.
  * @param [in] c        Chunk to initialize. Can be NULL to allocate a new Chunk.
+ * @param [in] vulkan   Global Vulkan object. Set NULL when using OpenGL.
  * @param [in] width    The width of the Chunk in \ref Block "Blocks".
  * @param [in] height   The height of the Chunk in \ref Block "Blocks".
  * @param [in] length   The length of the Chunk in \ref Block "Blocks".
