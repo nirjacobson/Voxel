@@ -191,7 +191,7 @@ void renderer_render_panel(Renderer* renderer, Panel* panel);
 /**
  * @private
  * @memberof Renderer
- * @brief 3D pipeline - camera/projection UBO structure.
+ * @brief Pipeline3D camera/projection UBO structure.
  */
 typedef struct {
     _Alignas(16) float camera[16];
@@ -201,7 +201,7 @@ typedef struct {
 /**
  * @private
  * @memberof Renderer
- * @brief 3D pipeline - push constants structure.
+ * @brief Pipeline3D push constants structure.
  */
 typedef struct {
     _Alignas(16) float model[16];
@@ -214,7 +214,7 @@ typedef struct {
 /**
  * @private
  * @memberof Renderer
- * @brief 2D pipeline - push constants structure.
+ * @brief Pipeline2D push constants structure.
  */
 typedef struct {
     _Alignas(16) float projection[16];

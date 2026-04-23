@@ -21,7 +21,7 @@ typedef struct {
 } HeapHeader;
 
 /**
- * @class HeapEntry
+ * @class HeapEntryHeader
  * @brief One Heap entry header.
  */
 typedef struct {

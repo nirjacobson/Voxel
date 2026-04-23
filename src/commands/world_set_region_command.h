@@ -13,7 +13,7 @@
 
 /**
  * @class WorldSetRegionCommand
- * @brief Command to set a volume of \ref Block Blocks to a certain color and activate them.
+ * @brief Command to set a volume of \ref Block "Blocks" to a certain color and activate them.
  */
 typedef struct {
     /// @private
@@ -33,7 +33,7 @@ typedef struct {
     uint16_t color;
 
     /// @private
-    /// @brief The Blocks that existed in the destination before execution.
+    /// @brief The \ref Block "Blocks" that existed in the destination before execution.
     Chunk* chunk;
 } WorldSetRegionCommand;
 

@@ -36,7 +36,7 @@ typedef struct {
 
 /**
  * @class World
- * @brief The world has a Ground and is divided into \ref WorldChunk "WorldChunks".
+ * @brief Has a Ground and is divided into \ref WorldChunk "WorldChunks".
  */
 typedef struct {
     /// @private

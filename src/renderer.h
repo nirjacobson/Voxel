@@ -23,7 +23,7 @@
 
 /**
  * @class Pipeline3D
- * @brief Encapsulates the state of the 3D Vulkan pipeline.
+ * @brief Encapsulates the state of the 3D %Vulkan pipeline.
  */
 typedef struct {
     /// @private
@@ -56,7 +56,7 @@ typedef struct {
 
 /**
  * @class Pipeline2D
- * @brief Encapsulates the state of the 2D Vulkan pipeline.
+ * @brief Encapsulates the state of the 2D %Vulkan pipeline.
  */
 typedef struct {
     /// @private

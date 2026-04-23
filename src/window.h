@@ -47,7 +47,7 @@ struct Voxel;
 
 /**
  * @class Window
- * @brief Voxel window.
+ * @brief The Voxel Window.
  */
 struct Window {
     /// @private

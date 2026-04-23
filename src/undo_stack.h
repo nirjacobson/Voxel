@@ -15,7 +15,7 @@ typedef struct Command Command;
 
 /**
  * @class Command
- * @brief Abstract class for an undo command.
+ * @brief Abstract class for an undoable command.
  */
 struct Command {
     /// @private

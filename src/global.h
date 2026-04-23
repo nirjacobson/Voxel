@@ -11,7 +11,7 @@
 
 /**
  * @class Global
- * @brief Global contants and functions.
+ * @brief %Global contants and functions.
  */
 typedef struct Global {
 

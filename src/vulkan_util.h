@@ -25,7 +25,7 @@
 
 /**
  * @class Pipeline
- * @brief Vulkan state for a pipeline.
+ * @brief %Vulkan state for a pipeline.
  */
 typedef struct {
     VkDescriptorSetLayout descriptorSetLayout;
@@ -36,7 +36,7 @@ typedef struct {
 
 /**
  * @class Vulkan
- * @brief Global Vulkan state.
+ * @brief %Global %Vulkan state.
  */
 typedef struct {
     VkInstance instance;
@@ -49,7 +49,7 @@ typedef struct {
 
 /**
  * @class QueueFamilyIndices
- * @brief Graphics and presentation queue family indices from Vulkan.
+ * @brief Graphics and presentation queue family indices from %Vulkan.
  */
 typedef struct {
     uint32_t graphicsFamily;

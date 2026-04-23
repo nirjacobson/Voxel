@@ -76,7 +76,7 @@ typedef struct {
 
 /**
  * @class MeshRenderStateVulkan
- * @brief Mesh render state (Vulkan).
+ * @brief Mesh render state (%Vulkan).
  */
 typedef struct {
     /// @private
@@ -102,8 +102,8 @@ typedef struct {
 
 /**
  * @class Mesh
- * @brief The render object for a set of Quads that share a color.
- * @details Contains the Quads and render state necessary to render them.
+ * @brief The render object for a set of \ref Quad "Quads" that share a color.
+ * @details Contains the \ref Quad "Quads" and render state necessary to render them.
  */
 typedef struct {
     /// @private

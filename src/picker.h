@@ -65,7 +65,7 @@ typedef struct {
 
 /**
  * @class Picker
- * @brief The Picker interacts with \ref Block "Blocks" in the World.
+ * @brief Cursor for manipulating \ref Block "Blocks" in the World.
  */
 typedef struct {
     /// @private

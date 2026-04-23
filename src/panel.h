@@ -90,7 +90,7 @@ typedef struct {
 
 /**
  * @class PanelRenderStateVulkan
- * @brief Panel render state (Vulkan).
+ * @brief Panel render state (%Vulkan).
  */
 typedef struct {
     /// @private
@@ -264,11 +264,11 @@ void panel_hide(Panel* panel);
 
 /**
  * @class PanelManager
- * @brief Container for adding, removing and finding Panels on-screen.
+ * @brief Container for adding, removing and finding \ref Panel "Panels" on-screen.
  */
 typedef struct PanelManager {
     /// @private
-    /// @brief Panels on the screen
+    /// @brief \ref Panel "Panels" on the screen
     LinkedList panels;
 
     /// @private

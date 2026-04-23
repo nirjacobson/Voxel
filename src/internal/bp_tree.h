@@ -28,7 +28,7 @@ typedef struct {
 } BPTreeHeader;
 
 /**
- * @class BPTreeHeader
+ * @class BPTreeNodeHeader
  * @brief B+ tree node header.
  */
 typedef struct {
@@ -38,7 +38,7 @@ typedef struct {
 } BPTreeNodeHeader;
 
 /**
- * @class BPTreeHeader
+ * @class BPTreeEntry
  * @brief B+ tree internal node entry.
  */
 typedef struct {
@@ -47,7 +47,7 @@ typedef struct {
 } BPTreeEntry;
 
 /**
- * @class BPTreeHeader
+ * @class BPTreeLeafEntry
  * @brief B+ tree leaf node entry.
  */
 typedef struct {
